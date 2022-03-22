@@ -2,7 +2,6 @@
 
 # asdf-kcat [![Build](https://github.com/douglasdgoulart/asdf-kcat/actions/workflows/build.yml/badge.svg)](https://github.com/douglasdgoulart/asdf-kcat/actions/workflows/build.yml) [![Lint](https://github.com/douglasdgoulart/asdf-kcat/actions/workflows/lint.yml/badge.svg)](https://github.com/douglasdgoulart/asdf-kcat/actions/workflows/lint.yml)
 
-
 [kcat](https://github.com/edenhill/kcat) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
@@ -18,7 +17,11 @@
 # Dependencies
 
 - `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
+- librdkafka - https://github.com/edenhill/librdkafka
+- libyajl (for JSON support, optional)
+- libavro-c and libserdes (for Avro support, optional. See https://github.com/confluentinc/libserdes)
+
+On Ubuntu or Debian: `sudo apt-get install librdkafka-dev libyajl-dev`
 
 # Install
 

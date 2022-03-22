@@ -7,15 +7,22 @@ on:
   pull_request:
 
 jobs:
-  plugin_test:
-    name: asdf plugin test
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-          - macos-latest
-    runs-on: ${{ matrix.os }}
+  plugin_ubuntu_test:
+    name: asdf plugin ubuntu test
+    runs-on: ubuntu-latest
     steps:
+      - name: Install dependencies
+        run: sudo apt install -y librdkafka-dev libyajl-dev
+      - name: asdf_plugin_test
+        uses: asdf-vm/actions/plugin-test@v1
+        with:
+          command: kcat -h\
+  plugin_macos_test:
+    name: asdf plugin macos test
+    runs-on: macos-latest
+    steps:
+      - name: Install dependencies
+        run: sudo brew install -y librdkafka
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v1
         with:

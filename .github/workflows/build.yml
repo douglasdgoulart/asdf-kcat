@@ -22,7 +22,9 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Install dependencies
-        run: sudo brew install -y librdkafka
+        run: |
+          brew update
+          brew install librdkafka
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v1
         with:

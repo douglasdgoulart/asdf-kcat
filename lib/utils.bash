@@ -55,9 +55,7 @@ install_version() {
 
   (
     cd "$ASDF_DOWNLOAD_PATH"
-    ./configure
-    make
-
+    ./bootstrap.sh
     mkdir -p "$install_path/bin"
     cp -r "$ASDF_DOWNLOAD_PATH"/kcat "$install_path/bin/"
 

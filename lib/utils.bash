@@ -55,6 +55,7 @@ install_version() {
 
   (
     cd "$ASDF_DOWNLOAD_PATH"
+    ./bootstrap.sh
     ./configure
     make
 
